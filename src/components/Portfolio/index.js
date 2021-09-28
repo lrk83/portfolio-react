@@ -1,6 +1,8 @@
-import React, {useState} from "react";
-import {Card, Button,Col} from "react-bootstrap";
+import React, {useState, useEffect} from "react";
+import {Card, Button,Col, Container} from "react-bootstrap";
 import logo from "../../assets/images/github.svg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Portfolio(){
 
@@ -57,11 +59,20 @@ function Portfolio(){
         },
     ])
 
+    useEffect(()=>{
+        AOS.init({
+          duration: 2000
+        });
+      });
+
+
     return(
-        <div>
-            <h2 className="my-work">
+        <Container className="outer-container">
+            <div className="my-3">
+        <div data-aos="fade-in" data-aos-delay="200" >
+            <h1 className="my-work">
                 Examples of my Work
-                </h2>
+                </h1>
         <section className="my-3" >
         <div className="portfolio-div">
             {work.map((example, i)=>(
@@ -84,6 +95,8 @@ function Portfolio(){
         </div>
         </section>
         </div>
+        </div>
+        </Container>
     )
 }
 

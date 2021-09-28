@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { validateEmail } from '../../utils/helpers';
-import {Form, Button} from "react-bootstrap";
+import {Form, Button, Container} from "react-bootstrap";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function ContactForm() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -36,33 +38,45 @@ function ContactForm() {
     }
   };
 
+  useEffect(()=>{
+    AOS.init({
+      duration: 2000
+    });
+  });
+
   return (
-    <section id="contact-section">
-      <h1 data-testid="h1tag">Contact Me</h1>
-      <Form id="contact-form" onSubmit={handleSubmit}>
-      <Form.Group className="mb-3">
-          <Form.Label htmlFor="name">Name:</Form.Label>
-          <Form.Control type="text" name="name" defaultValue={name} onBlur={handleChange} />
-          
-          </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="email">Email address:</Form.Label>
-          <Form.Control type="email" name="email" defaultValue={email} onBlur={handleChange} />
-          <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="message">Message:</Form.Label>
-          <Form.Control as="textarea" name="message" rows="5" defaultValue={message} onBlur={handleChange} />
-          </Form.Group>
-        {errorMessage && (
-          <div>
-            <p className="error-text">{errorMessage}</p>
+    <section>
+      <Container className="outer-container">
+        <div className="my-3">
+          <div data-aos="fade-in" data-aos-delay="200">
+            <h1 data-testid="h1tag">Contact Me</h1>
+            <Form id="contact-form" onSubmit={handleSubmit}>
+            <Form.Group className="mb-3">
+                <Form.Label htmlFor="name">Name:</Form.Label>
+                <Form.Control type="text" name="name" defaultValue={name} onBlur={handleChange} />
+                
+                </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label htmlFor="email">Email address:</Form.Label>
+                <Form.Control type="email" name="email" defaultValue={email} onBlur={handleChange} />
+                <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label htmlFor="message">Message:</Form.Label>
+                <Form.Control as="textarea" name="message" rows="5" defaultValue={message} onBlur={handleChange} />
+                </Form.Group>
+              {errorMessage && (
+                <div>
+                  <p className="error-text">{errorMessage}</p>
+                </div>
+              )}
+              <Button variant="primary" data-testid="button" type="submit">Submit</Button>
+            </Form>
           </div>
-        )}
-        <Button variant="primary" data-testid="button" type="submit">Submit</Button>
-      </Form>
+        </div>
+      </Container>
     </section>
   );
 }

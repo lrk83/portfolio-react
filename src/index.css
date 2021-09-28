@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e9e8e6;
 }
 
 code {
@@ -101,6 +102,7 @@ main {
 }
 
 .my-5{
+  padding-top: 4rem;
   padding: 15px;
   border: 1px solid rgba(0,0,0,1);
   border-radius: 5px;
@@ -154,9 +156,16 @@ h2{
 }
 
 .my-3{
-  padding: 15px;
-  border: 1px solid rgba(0,0,0,1);
   border-radius: 5px;
+  padding: 1rem;
+  background-color: #fff;
+  z-index: 2;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.outer-container{
+  padding: 2rem 1rem;
+
 }
 
 #footer-nav{
@@ -164,8 +173,14 @@ h2{
   justify-content: flex-end;
 }
 
+
+
 #nav-selected{
-  color: white;
+  color: #fff;
+}
+
+#nav-selected span{
+  color: #fff;
 }
 
 .center{
@@ -182,4 +197,67 @@ h2{
 
 .github-link:hover{
   opacity: 1;
+}
+
+main{
+  background-color: #e9e8e6;
+  background-size: cover;
+  position: relative;
+}
+
+#headr{
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.fixed-top{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+#header .header-scrolled {
+  background: rgba(0,0,0,.0);
+  padding:12px 0;
+}
+
+.nav-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.logo a{
+  color: #fff
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.navbar ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar ul li a{
+  color: #fff
 }

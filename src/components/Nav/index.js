@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import {Navbar, Nav, Container} from "react-bootstrap";
+import { BiHome, BiUser, BiFileBlank, BiBookOpen, BiBookContent} from "react-icons/bi"
 
 function CustomNav(props){
 
@@ -35,44 +36,48 @@ function CustomNav(props){
     }
 
   return (
-    <header>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="/">Lukas Keel</Navbar.Brand>
-          <Navbar.Collapse>
-            <Nav className="me-auto">
-              {contactSelected ? (
-                <>
-                <Nav.Link id="nav-selected">Contact</Nav.Link>
-                </>
-              ) : (
-                <><Nav.Link onClick={() => handleClick(0)}> Contact </Nav.Link></>
-              )}
-              {aboutSelected ? (
-                <>
-                <Nav.Link id="nav-selected">About Me</Nav.Link>
-                </>
-              ) : (
-                <><Nav.Link onClick={() => handleClick(1)}> About Me </Nav.Link></>
-              )}
-              {portfolioSelected ? (
-                <>
-                <Nav.Link id="nav-selected">Portfolio</Nav.Link>
-                </>
-              ) : (
-                <><Nav.Link onClick={() => handleClick(2)}> Portfolio </Nav.Link></>
-              )}
-              {resumeSelected ? (
-                <>
-                <Nav.Link id="nav-selected">Resume</Nav.Link>
-                </>
-              ) : (
-                <><Nav.Link onClick={() => handleClick(3)}> Resume </Nav.Link></>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
+    <header className="fixed-top header-scrolled">
+      <Container class="nav-container">
+      <Navbar bg="dark" variant="dark" className="nav-menu">
+        <h1 class="logo">
+        <Nav.Link onClick={() => handleClick(1)}><span>Lukas</span> </Nav.Link>
+        </h1>
+        <ul>
+          <li>
+            {contactSelected ? (
+                  <><Nav.Link id="nav-selected"><span>Contact</span></Nav.Link></>
+                ) : (
+                  <><Nav.Link onClick={() => handleClick(0)}><span>Contact</span> </Nav.Link></>
+                )
+            }
+          </li>
+          <li>
+            {aboutSelected ? (
+                  <><Nav.Link id="nav-selected"><span>About Me</span></Nav.Link></>
+                ) : (
+                  <><Nav.Link onClick={() => handleClick(1)}><span>About Me</span> </Nav.Link></>
+                )
+            }
+          </li>
+          <li>
+            {portfolioSelected ? (
+                  <><Nav.Link id="nav-selected"><span>Portfolio</span></Nav.Link></>
+                ) : (
+                  <><Nav.Link onClick={() => handleClick(2)}><span>Portfolio</span> </Nav.Link></>
+                )
+            }
+          </li>
+          <li>
+            {resumeSelected ? (
+                  <><Nav.Link id="nav-selected"><span>Resume</span></Nav.Link></>
+                ) : (
+                  <><Nav.Link onClick={() => handleClick(3)}><span>Resume</span> </Nav.Link></>
+                )
+            }
+          </li>
+          </ul>
       </Navbar>
+      </Container>
     </header>
   )}
 
