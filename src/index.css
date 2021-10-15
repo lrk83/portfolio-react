@@ -55,6 +55,12 @@ code {
   background-size: cover;
 }
 
+#theBackBeat-Img-Element{
+  background-image: url(https://wallpaperbat.com/img/10293-jeremy-sutton-studios-art-of-jazz-2018-jeremy-sutton-studios.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
 .card{
   flex: 40%;
   width: 40%;

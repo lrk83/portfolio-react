@@ -7,6 +7,12 @@ import 'aos/dist/aos.css';
 function Portfolio(){
 
     const [work] = useState([
+        {   name: 'the Backbeat',
+            id: 'theBackBeat-Img-Element',
+            description: 'MERN Stack',
+            link: 'https://the-backbeat.herokuapp.com/',
+            github: 'https://github.com/lrk83/the-backbeat'
+        },
         {
             name: 'Gopher 2.0',
             id: 'GopherTwo-Img-Element',
