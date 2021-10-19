@@ -17,7 +17,7 @@ function About() {
       <section className="my-3">
         <Container data-aos="fade-in" data-aos-delay="300">
           <h1 id="about">Lukas Keel</h1>
-          <h2> Full Stack Web Developer and Music Software Designer </h2>
+          <h2> Full Stack Web Developer </h2>
           <div className="image-box">
           <Image className="cover-image" src={coverImage}/>
           </div>

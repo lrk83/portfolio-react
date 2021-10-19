@@ -49,6 +49,16 @@ function ContactForm() {
       <Container className="outer-container">
         <div className="my-3">
           <div data-aos="fade-in" data-aos-delay="200">
+            <h2>Contact Info</h2>
+            <ul>
+              <li>Email: lrk83@cornell.edu</li>
+              <li>Github: <a href="https://github.com/lrk83">github.com/lrk83</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/in/lukas-keel/">linkedin.com/in/lukas-keel/</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="my-3">
+          <div data-aos="fade-in" data-aos-delay="200">
             <h1 data-testid="h1tag">Contact Me</h1>
             <Form id="contact-form" onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
